@@ -11,6 +11,8 @@ TagManager:
   - Trash
   - Trash Left
   - Trash Right
+  - Baby
+  - Bomb
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Interactable
   - Trash
   - PostProcessing
-  - 
+  - Bloom
   - 
   - 
   - 

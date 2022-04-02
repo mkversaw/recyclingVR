@@ -9,11 +9,11 @@ public class score : MonoBehaviour
     [SerializeField] private TextMeshProUGUI guiRef;
     private void Start()
     {
-        guiRef.text = "Current points: " + points.ToString(); // initialize points display
+        //guiRef.text = "Current points: " + points.ToString(); // initialize points display
     }
 
     private void Update()
     {
-        guiRef.text = "Current points: " + points.ToString(); // update points display
+        //guiRef.text = "Current points: " + points.ToString(); // update points display
     }
 }

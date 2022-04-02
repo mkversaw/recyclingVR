@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class destroyTrash : MonoBehaviour
 {
@@ -31,6 +32,10 @@ public class destroyTrash : MonoBehaviour
 				managerRef.GetComponent<score>().points += 10;
 				Destroy(other.gameObject);
 			}
+		} else if(other.tag == "Baby" || other.tag == "Bomb") // game over!!
+		{
+			Destroy(other.gameObject);
+			SceneManager.LoadScene("Start Scene");
 		}
 	}
 

@@ -47,7 +47,7 @@ PlayerSettings:
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
-  m_ActiveColorSpace: 0
+  m_ActiveColorSpace: 1
   m_MTRendering: 1
   mipStripping: 0
   numberOfMipsStripped: 0
@@ -139,6 +139,10 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 1301123275206206801, guid: d9cb2b23d5cbdbb4e917d83771935e8e, type: 2}
+  - {fileID: 1700034303005160670, guid: a40c153f2eac0a04098ae7c986a70019, type: 2}
+  - {fileID: 11400000, guid: 8321061f5d311614ca520235f1c496f9, type: 2}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -157,7 +161,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.TeamMaverick.SwapSaber
-    Standalone: com.SoftInteractionProductions.SwapSaber
+    Standalone: com.TeamMaverick.SwapSaber
   buildNumber:
     Standalone: 0
     iPhone: 0
