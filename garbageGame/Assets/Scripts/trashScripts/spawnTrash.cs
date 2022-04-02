@@ -12,8 +12,8 @@ public class spawnTrash : MonoBehaviour
 	[SerializeField] private GameObject babyRef;
 	[SerializeField] private GameObject bombRef;
 
-	[SerializeField] private float spawnSpeedLower; // in 
-	[SerializeField] private float spawnSpeedUpper; // in 
+	[SerializeField] private float spawnSpeedLower = 1.5f; // in 
+	[SerializeField] private float spawnSpeedUpper = 3.0f; // in 
 	[SerializeField] private int specialChance = 10; // 1 out of x chance
 
 	public float currentSpeed = 0.3f;
@@ -29,9 +29,13 @@ public class spawnTrash : MonoBehaviour
 		StartCoroutine(coroutine2);
 	}
 
-	private void speedUp()
+	public void speedUp()
 	{
-
+		currentSpeed += 0.01f;
+		if(spawnSpeedUpper > 0.1)
+		{
+			spawnSpeedUpper -= 0.05f;
+		}
 	}
 
 	IEnumerator Spawn(int which)

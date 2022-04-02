@@ -16,6 +16,7 @@ public class floor : MonoBehaviour
 		{
 			Destroy(other.gameObject);
 			managerRef.GetComponent<score>().points -= 10;
+			managerRef.GetComponent<spawnTrash>().speedUp();
 		}
 	}
 }

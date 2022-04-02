@@ -18,6 +18,7 @@ public class destroyTrash : MonoBehaviour
 			} else // BAD!!!!
 			{
 				managerRef.GetComponent<score>().points -= 10;
+				managerRef.GetComponent<spawnTrash>().speedUp();
 				Destroy(other.gameObject);
 			}
 
@@ -26,6 +27,7 @@ public class destroyTrash : MonoBehaviour
 			if(left) // BAD!!!!
 			{
 				managerRef.GetComponent<score>().points -= 10;
+				managerRef.GetComponent<spawnTrash>().speedUp();
 				Destroy(other.gameObject);
 			} else
 			{
@@ -35,7 +37,7 @@ public class destroyTrash : MonoBehaviour
 		} else if(other.tag == "Baby" || other.tag == "Bomb") // game over!!
 		{
 			Destroy(other.gameObject);
-			SceneManager.LoadScene("Start Scene");
+			//SceneManager.LoadScene("Start Scene");
 		}
 	}
 
