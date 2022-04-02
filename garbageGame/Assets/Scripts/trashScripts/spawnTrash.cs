@@ -24,9 +24,9 @@ public class spawnTrash : MonoBehaviour
 
 	IEnumerator Spawn(int which)
 	{
-		if(which == 1) // left
+		int randIdx;
+		if (which == 1) // left
 		{
-			int randIdx;
 			while (true)
 			{
 				yield return new WaitForSecondsRealtime(Random.Range(spawnSpeedLower, spawnSpeedUpper)); // only run every (spawnSpeeds) seconds

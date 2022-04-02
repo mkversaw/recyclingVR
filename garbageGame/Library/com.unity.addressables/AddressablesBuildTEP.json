@@ -1,9 +1,13 @@
 {
-"Date": "4/2/2022 10:04:47 AM",
+"Date": "4/2/2022 11:15:43 AM",
 "UnityVersion": "2021.2.14f1",
 "com.unity.scriptablebuildpipeline": "1.19.6",
 "com.unity.addressables": "1.19.19",
 "traceEvents": [
-{"name": "Building Use Asset Database (fastest)", "ph": "X", "dur": 715.1, "tid": 1, "ts": 6449, "pid": 1}
+{"name": "Building Default Build Script", "ph": "X", "dur": 410894.4, "tid": 1, "ts": 7177, "pid": 1}
+,{"name": "ProcessAllGroups", "ph": "X", "dur": 377896.2, "tid": 1, "ts": 8958, "pid": 1}
+,{"name": "Generate Catalog", "ph": "X", "dur": 17391.1, "tid": 1, "ts": 390472, "pid": 1}
+,{"name": "Generate link", "ph": "X", "dur": 8746.29999999996, "tid": 1, "ts": 407866, "pid": 1}
+,{"name": "Generate Settings", "ph": "X", "dur": 968.399999999974, "tid": 1, "ts": 416636, "pid": 1}
 ]
 }
