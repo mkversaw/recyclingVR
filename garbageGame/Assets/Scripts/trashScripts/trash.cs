@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class trash : MonoBehaviour
 {
-	private void OnCollisionEnter(Collision collision)
-	{
-
-	}
+	public bool left = false;
 }

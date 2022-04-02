@@ -24,18 +24,19 @@ public class spawnTrash : MonoBehaviour
 
 	IEnumerator Spawn(int which)
 	{
-		if(which == 1)
+		if(which == 1) // left
 		{
 			while (true)
 			{
 				yield return new WaitForSecondsRealtime(Random.Range(spawnSpeedLower, spawnSpeedUpper)); // only run every (spawnSpeeds) seconds
 				int randIdx = Random.Range(0, trashRefs.Length); // which trash to spawn
 				print(randIdx);
-				Instantiate(trashRefs[randIdx], spawnPos1.position, Random.rotation); // generate the object at spawnPos 1, with a random rotation
+				GameObject temp = Instantiate(trashRefs[randIdx], spawnPos1.position, Random.rotation); // generate the object at spawnPos 1, with a random rotation
+				temp.GetComponent<trash>().left = true;
 			}
 		} else
 		{
-			while (true)
+			while (true) // right
 			{
 				yield return new WaitForSecondsRealtime(Random.Range(spawnSpeedLower, spawnSpeedUpper)); // only run every (spawnSpeeds) seconds
 				int randIdx = Random.Range(0, trashRefs.Length); // which trash to spawn

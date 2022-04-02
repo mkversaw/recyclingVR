@@ -366,6 +366,7 @@
 "Assets/Scripts/trashScripts/destroyTrash.cs"
 "Assets/Scripts/trashScripts/score.cs"
 "Assets/Scripts/trashScripts/spawnTrash.cs"
+"Assets/Scripts/trashScripts/swapSaber.cs"
 "Assets/Scripts/trashScripts/trash.cs"
 "Assets/spawnDebris.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
