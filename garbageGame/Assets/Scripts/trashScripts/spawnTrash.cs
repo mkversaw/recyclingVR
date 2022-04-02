@@ -26,11 +26,11 @@ public class spawnTrash : MonoBehaviour
 	{
 		if(which == 1) // left
 		{
+			int randIdx;
 			while (true)
 			{
 				yield return new WaitForSecondsRealtime(Random.Range(spawnSpeedLower, spawnSpeedUpper)); // only run every (spawnSpeeds) seconds
-				int randIdx = Random.Range(0, trashRefs.Length); // which trash to spawn
-				print(randIdx);
+				randIdx = Random.Range(0, trashRefs.Length); // which trash to spawn
 				GameObject temp = Instantiate(trashRefs[randIdx], spawnPos1.position, Random.rotation); // generate the object at spawnPos 1, with a random rotation
 				temp.GetComponent<trash>().left = true;
 			}
@@ -39,7 +39,7 @@ public class spawnTrash : MonoBehaviour
 			while (true) // right
 			{
 				yield return new WaitForSecondsRealtime(Random.Range(spawnSpeedLower, spawnSpeedUpper)); // only run every (spawnSpeeds) seconds
-				int randIdx = Random.Range(0, trashRefs.Length); // which trash to spawn
+				randIdx = Random.Range(0, trashRefs.Length); // which trash to spawn
 				Instantiate(trashRefs[randIdx], spawnPos2.position, Random.rotation); // generate the object at spawnPos 2, with a random rotation
 			}
 		}
