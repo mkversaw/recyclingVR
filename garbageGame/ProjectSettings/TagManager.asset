@@ -8,6 +8,9 @@ TagManager:
   - Debris
   - Earth
   - Gun
+  - Trash
+  - Trash Left
+  - Trash Right
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Interactable
-  - 
+  - Trash
   - 
   - 
   - 
