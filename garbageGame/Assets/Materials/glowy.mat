@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: glowy
-  m_Shader: {fileID: -6465566751694194690, guid: 199dc88d76e4fff40abb3e7fdd866e47, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 321fb99921975cb47b4d267f81d90e12, type: 3}
   m_ShaderKeywords: _EMISSION _RECEIVE_SHADOWS_OFF _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
@@ -94,6 +94,7 @@ Material:
     - _Metallic: 0.846
     - _Mode: 0
     - _OcclusionStrength: 1
+    - _OuterGlow: 10
     - _Parallax: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -109,8 +110,8 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _BaseColor: {r: 0.7924528, g: 0.6665115, b: 0.51957995, a: 1}
-    - _Base_Color: {r: 0.98039216, g: 0, b: 0.7144933, a: 1}
-    - _Color: {r: 0.9622642, g: 0.09531862, b: 0.6453757, a: 1}
+    - _Base_Color: {r: 1, g: 0.3160377, b: 0.63677126, a: 1}
+    - _Color: {r: 1, g: 0, b: 0.49922705, a: 1}
     - _EmissionColor: {r: 1.1351843, g: 0, b: 0.33334777, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_BuildTextureStacks: []

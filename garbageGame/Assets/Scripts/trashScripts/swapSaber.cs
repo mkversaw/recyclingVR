@@ -7,11 +7,18 @@ public class swapSaber : MonoBehaviour
 {
 	[SerializeField] private Transform leftTransform;
 	[SerializeField] private Transform rightTransform;
+
+	AudioSource source;
+	private void Start()
+	{
+		source = GetComponent<AudioSource>();
+	}
 	private void OnTriggerEnter(Collider other)
 	{
 		if(other.tag == "Trash Left" || other.tag == "Trash Right") // only applies to trash
 		{
-			if(other.gameObject.GetComponent<trash>().left) // if object is on left conveyor
+			source.Play();
+			if (other.gameObject.GetComponent<trash>().left) // if object is on left conveyor
 			{
 				// teleport it to right side
 				other.gameObject.GetComponent<trash>().left = false;
