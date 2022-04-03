@@ -12,7 +12,7 @@ public class floor : MonoBehaviour
 		{
 			print(other.gameObject.name + " hit the floor");
 			Destroy(other.gameObject);
-			SceneManager.LoadScene("Start Scene");
+			SceneManager.LoadScene("game over scene");
 		} else if (other.tag == "Trash Left" || other.tag == "Trash Right")
 		{
 			Destroy(other.gameObject);

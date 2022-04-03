@@ -37,7 +37,7 @@ public class destroyTrash : MonoBehaviour
 		} else if(other.tag == "Baby" || other.tag == "Bomb") // game over!!
 		{
 			Destroy(other.gameObject);
-			SceneManager.LoadScene("Start Scene");
+			SceneManager.LoadScene("game over scene");
 		}
 	}
 

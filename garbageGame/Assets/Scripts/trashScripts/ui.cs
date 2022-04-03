@@ -39,4 +39,9 @@ public class ui : MonoBehaviour
 		baseMenuRef.SetActive(false);
 		helpMenuRef.SetActive(true);
 	}
+
+	public void home()
+	{
+		SceneManager.LoadScene("start scene");
+	}
 }
