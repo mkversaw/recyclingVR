@@ -15,7 +15,16 @@ public class spawnTrash : MonoBehaviour
 	[SerializeField] private float spawnSpeedUpper = 3.0f; // in 
 	[SerializeField] private int specialChance = 10; // 1 out of x chance
 
-	private bool specialEvent = false;
+	[SerializeField] private GameObject screenRefBlank;
+	[SerializeField] private GameObject screenRefSus;
+
+	[SerializeField] private AudioSource audioSourceRef;
+	[SerializeField] private AudioClip song2;
+	[SerializeField] private AudioClip song3;
+
+	private int currSong = 1;
+
+	private bool specialEvent = true;
 
 	public float currentSpeed = 0.3f;
 
@@ -23,6 +32,7 @@ public class spawnTrash : MonoBehaviour
 	private IEnumerator coroutine2;
 	private IEnumerator coroutine3;
 	private IEnumerator coroutine4;
+	private IEnumerator coroutine5;
 
 	private void Start()
 	{
@@ -34,6 +44,9 @@ public class spawnTrash : MonoBehaviour
 
 		coroutine4 = speedUpGradual();
 		StartCoroutine(coroutine4);
+
+		coroutine5 = waitSpecial();
+		StartCoroutine(coroutine5);
 	}
 
 	public void speedUp()
@@ -45,6 +58,13 @@ public class spawnTrash : MonoBehaviour
 		}
 	}
 
+
+	IEnumerator waitSpecial()
+	{
+		yield return new WaitForSecondsRealtime(25.0f);
+		specialEvent = false;
+
+	}
 	IEnumerator speedUpGradual()
 	{
 		while(true)
@@ -60,6 +80,19 @@ public class spawnTrash : MonoBehaviour
 
 	IEnumerator tempSlowDown()
 	{
+		if(currSong == 1)
+		{
+			audioSourceRef.clip = song2;
+			audioSourceRef.Play();
+		} else if(currSong == 4)
+		{
+			audioSourceRef.clip = song3;
+			audioSourceRef.Play();
+		}
+
+		currSong++;
+
+		print("spawning a bomb or baby");
 		specialEvent = true;
 		float holdSpeed = currentSpeed;
 		float holdSpawn = spawnSpeedUpper;
@@ -70,11 +103,16 @@ public class spawnTrash : MonoBehaviour
 		}
 		spawnSpeedUpper += 0.15f;
 
-		yield return new WaitForSecondsRealtime(5.0f);
+		screenRefBlank.SetActive(false);
+		screenRefSus.SetActive(true);
+
+		yield return new WaitForSecondsRealtime(15.0f);
 		currentSpeed = holdSpeed;
 		spawnSpeedUpper = holdSpeed;
 		
 		specialEvent = false;
+		screenRefBlank.SetActive(true);
+		screenRefSus.SetActive(false);
 	}
 
 	IEnumerator Spawn(int which)
