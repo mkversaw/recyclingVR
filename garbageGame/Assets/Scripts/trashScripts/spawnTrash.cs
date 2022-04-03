@@ -21,6 +21,7 @@ public class spawnTrash : MonoBehaviour
 	[SerializeField] private AudioSource audioSourceRef;
 	[SerializeField] private AudioClip song2;
 	[SerializeField] private AudioClip song3;
+	[SerializeField] private AudioSource sirenRef;
 
 	private int currSong = 1;
 
@@ -91,6 +92,8 @@ public class spawnTrash : MonoBehaviour
 		}
 
 		currSong++;
+
+		sirenRef.Play();
 
 		print("spawning a bomb or baby");
 		specialEvent = true;
