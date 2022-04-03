@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class spawnTrash : MonoBehaviour
 {
-
 	[SerializeField] private Transform spawnPos1; // where to spawn
 	[SerializeField] private Transform spawnPos2; // where to spawn
 	[SerializeField] private GameObject[] trashRefs; // what to spawn
@@ -23,6 +22,7 @@ public class spawnTrash : MonoBehaviour
 	private IEnumerator coroutine1;
 	private IEnumerator coroutine2;
 	private IEnumerator coroutine3;
+	private IEnumerator coroutine4;
 
 	private void Start()
 	{
@@ -31,6 +31,9 @@ public class spawnTrash : MonoBehaviour
 		coroutine2 = Spawn(2);
 		StartCoroutine(coroutine2);
 		coroutine3 = tempSlowDown();
+
+		coroutine4 = speedUpGradual();
+		StartCoroutine(coroutine4);
 	}
 
 	public void speedUp()
@@ -38,20 +41,25 @@ public class spawnTrash : MonoBehaviour
 		currentSpeed += 0.01f;
 		if(spawnSpeedUpper > 0.1)
 		{
-			spawnSpeedUpper -= 0.05f;
+			spawnSpeedUpper -= 0.02f;
+		}
+	}
+
+	IEnumerator speedUpGradual()
+	{
+		while(true)
+		{
+			currentSpeed += 0.01f;
+			if (spawnSpeedUpper > 0.1)
+			{
+				spawnSpeedUpper -= 0.02f;
+			}
+			yield return new WaitForSecondsRealtime(20.0f);
 		}
 	}
 
 	IEnumerator tempSlowDown()
 	{
-		print("sadjsadadsadsadsaafsajhf");
-		if(specialEvent)
-		{
-			print("!!!!!!!!!!!!!!!!!!!!!");
-		} else
-		{
-			print("normal");
-		}
 		specialEvent = true;
 		float holdSpeed = currentSpeed;
 		float holdSpawn = spawnSpeedUpper;
