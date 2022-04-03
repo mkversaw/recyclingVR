@@ -106,13 +106,13 @@ public class spawnTrash : MonoBehaviour
 		screenRefBlank.SetActive(false);
 		screenRefSus.SetActive(true);
 
-		yield return new WaitForSecondsRealtime(15.0f);
+		yield return new WaitForSecondsRealtime(10.0f);
 		currentSpeed = holdSpeed;
 		spawnSpeedUpper = holdSpeed;
 		
 		specialEvent = false;
-		screenRefBlank.SetActive(true);
 		screenRefSus.SetActive(false);
+		screenRefBlank.SetActive(true);
 	}
 
 	IEnumerator Spawn(int which)
