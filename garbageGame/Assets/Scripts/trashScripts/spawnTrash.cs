@@ -16,10 +16,13 @@ public class spawnTrash : MonoBehaviour
 	[SerializeField] private float spawnSpeedUpper = 3.0f; // in 
 	[SerializeField] private int specialChance = 10; // 1 out of x chance
 
+	private bool specialEvent = false;
+
 	public float currentSpeed = 0.3f;
 
 	private IEnumerator coroutine1;
 	private IEnumerator coroutine2;
+	private IEnumerator coroutine3;
 
 	private void Start()
 	{
@@ -27,6 +30,7 @@ public class spawnTrash : MonoBehaviour
 		StartCoroutine(coroutine1);
 		coroutine2 = Spawn(2);
 		StartCoroutine(coroutine2);
+		coroutine3 = tempSlowDown();
 	}
 
 	public void speedUp()
@@ -38,8 +42,36 @@ public class spawnTrash : MonoBehaviour
 		}
 	}
 
+	IEnumerator tempSlowDown()
+	{
+		print("sadjsadadsadsadsaafsajhf");
+		if(specialEvent)
+		{
+			print("!!!!!!!!!!!!!!!!!!!!!");
+		} else
+		{
+			print("normal");
+		}
+		specialEvent = true;
+		float holdSpeed = currentSpeed;
+		float holdSpawn = spawnSpeedUpper;
+		currentSpeed -= 0.1f;
+		if(currentSpeed <= 0)
+		{
+			currentSpeed = 0.1f;
+		}
+		spawnSpeedUpper += 0.15f;
+
+		yield return new WaitForSecondsRealtime(5.0f);
+		currentSpeed = holdSpeed;
+		spawnSpeedUpper = holdSpeed;
+		
+		specialEvent = false;
+	}
+
 	IEnumerator Spawn(int which)
 	{
+		yield return new WaitForSecondsRealtime(5.0f); // initial start delay in seconds
 		int randIdx;
 		if (which == 1) // left
 		{
@@ -48,7 +80,7 @@ public class spawnTrash : MonoBehaviour
 				yield return new WaitForSecondsRealtime(Random.Range(spawnSpeedLower, spawnSpeedUpper)); // only run every (spawnSpeeds) seconds
 
 				randIdx = Random.Range(0, specialChance);
-				if(randIdx == 1) // special happened!!!
+				if(randIdx == 1 && !specialEvent) // special happened!!!
 				{
 					randIdx = Random.Range(0, 2);
 					if(randIdx == 0) // bomb
@@ -58,6 +90,7 @@ public class spawnTrash : MonoBehaviour
 					{
 						Instantiate(babyRef, spawnPos1.position, Random.rotation); // generate the object at spawnPos 1, with a random rotation
 					}
+					StartCoroutine(coroutine3);
 				} else
 				{
 					randIdx = Random.Range(0, trashRefs.Length); // which trash to spawn
@@ -72,7 +105,7 @@ public class spawnTrash : MonoBehaviour
 				yield return new WaitForSecondsRealtime(Random.Range(spawnSpeedLower, spawnSpeedUpper)); // only run every (spawnSpeeds) seconds
 
 				randIdx = Random.Range(0, specialChance);
-				if (randIdx == 1) // special happened!!!
+				if (randIdx == 1 && !specialEvent) // special happened!!!
 				{
 					randIdx = Random.Range(0, 2);
 					if (randIdx == 0) // bomb
@@ -83,6 +116,7 @@ public class spawnTrash : MonoBehaviour
 					{
 						Instantiate(babyRef, spawnPos2.position, Random.rotation); // generate the object at spawnPos 1, with a random rotation
 					}
+					StartCoroutine(coroutine3);
 				} else
 				{
 					randIdx = Random.Range(0, trashRefs.Length); // which trash to spawn
