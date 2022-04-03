@@ -17,7 +17,9 @@ public class swapSaber : MonoBehaviour
 	{
 		if(other.tag == "Trash Left" || other.tag == "Trash Right") // only applies to trash
 		{
-			source.Play();
+			//source.Stop();
+			//source.Play();
+			source.PlayOneShot(source.clip, 0.6f);
 			if (other.gameObject.GetComponent<trash>().left) // if object is on left conveyor
 			{
 				// teleport it to right side

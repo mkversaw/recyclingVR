@@ -93,7 +93,9 @@ public class spawnTrash : MonoBehaviour
 
 		currSong++;
 
-		sirenRef.Play();
+		//sirenRef.Stop();
+		//sirenRef.Play();
+		sirenRef.PlayOneShot(sirenRef.clip, 0.8f);
 
 		print("spawning a bomb or baby");
 		specialEvent = true;
