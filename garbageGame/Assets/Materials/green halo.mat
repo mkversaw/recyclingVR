@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: green halo
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _SURFACE_TYPE_TRANSPARENT
-  m_LightmapFlags: 4
+  m_ShaderKeywords: _EMISSION _SURFACE_TYPE_TRANSPARENT
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
@@ -107,9 +107,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.06783055, g: 0.99215686, b: 0.058823552, a: 0.15686275}
-    - _Color: {r: 0.067830525, g: 0.9921568, b: 0.058823526, a: 0.15686275}
-    - _EmissionColor: {r: 0.000026807598, g: 0.000034466913, b: 0.00062806375, a: 1}
+    - _BaseColor: {r: 0.00840354, g: 1, b: 0, a: 0.15686275}
+    - _Color: {r: 0.00840354, g: 1, b: 0, a: 0.15686275}
+    - _EmissionColor: {r: 0.06603776, g: 0.4811321, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5298806231845418240

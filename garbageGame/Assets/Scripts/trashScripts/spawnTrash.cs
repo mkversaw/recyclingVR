@@ -62,7 +62,7 @@ public class spawnTrash : MonoBehaviour
 
 	IEnumerator waitSpecial()
 	{
-		yield return new WaitForSecondsRealtime(15.0f);
+		yield return new WaitForSecondsRealtime(12.0f);
 		specialEvent = false;
 
 	}

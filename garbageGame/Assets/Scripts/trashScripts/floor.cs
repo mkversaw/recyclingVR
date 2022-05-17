@@ -10,9 +10,9 @@ public class floor : MonoBehaviour
 	{
 		if (other.tag == "Bomb" || other.tag == "Baby")
 		{
-			print(other.gameObject.name + " hit the floor");
-			Destroy(other.gameObject);
-			SceneManager.LoadScene("game over scene");
+			//print(other.gameObject.name + " hit the floor");
+			//Destroy(other.gameObject);
+			//SceneManager.LoadScene("game over scene");
 		} else if (other.tag == "Trash Left" || other.tag == "Trash Right")
 		{
 			Destroy(other.gameObject);

@@ -1,13 +1,13 @@
 {
-"Date": "4/3/2022 2:10:04 PM",
+"Date": "4/20/2022 10:50:14 PM",
 "UnityVersion": "2021.2.14f1",
 "com.unity.scriptablebuildpipeline": "1.19.6",
 "com.unity.addressables": "1.19.19",
 "traceEvents": [
-{"name": "Building Default Build Script", "ph": "X", "dur": 358048, "tid": 1, "ts": 95, "pid": 1}
-,{"name": "ProcessAllGroups", "ph": "X", "dur": 354829.1, "tid": 1, "ts": 207, "pid": 1}
-,{"name": "Generate Catalog", "ph": "X", "dur": 1892.60000000002, "tid": 1, "ts": 355074, "pid": 1}
-,{"name": "Generate link", "ph": "X", "dur": 770.399999999995, "tid": 1, "ts": 356968, "pid": 1}
-,{"name": "Generate Settings", "ph": "X", "dur": 388.900000000035, "tid": 1, "ts": 357746, "pid": 1}
+{"name": "Building Default Build Script", "ph": "X", "dur": 153306.7, "tid": 1, "ts": 7121, "pid": 1}
+,{"name": "ProcessAllGroups", "ph": "X", "dur": 121683.3, "tid": 1, "ts": 9044, "pid": 1}
+,{"name": "Generate Catalog", "ph": "X", "dur": 18034, "tid": 1, "ts": 134236, "pid": 1}
+,{"name": "Generate link", "ph": "X", "dur": 6808.79999999999, "tid": 1, "ts": 152272, "pid": 1}
+,{"name": "Generate Settings", "ph": "X", "dur": 804.400000000015, "tid": 1, "ts": 159098, "pid": 1}
 ]
 }
